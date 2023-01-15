@@ -6,18 +6,18 @@ void print(int arr[], int n) {
 }
 int main()
 {
-    int arr[] = {7,9,5,1,3};
+    int arr[] = {3,5,4,7,6,9,2,8,1};
     int n = sizeof(arr)/sizeof(arr[0]);
     printf("Before:\n");
     print(arr,n);
     
     printf("\nAfter sorting according to accedent order:\n");
-    for(int i = 0; i < n; i++){
-        for(int j = i+1,k=1; j < n; j++){
-            if(arr[i]>arr[j]){
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
+    for(int i = 1; i < n; i++){
+        for(int j = 0, k = 1; j < n-i; j++){
+            if(arr[j] > arr[j+1]){
+                int temp = arr[j + 1];
+                arr[j + 1] = arr[j];
+                arr[j] = temp;
             }
             printf("%d sort %d check:\n\n",i+1,k);
             k++;
